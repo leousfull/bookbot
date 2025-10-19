@@ -1,6 +1,7 @@
 def get_num_words(texto):
     qtd_palavras = len(texto.split())
-    print(f"Found {qtd_palavras} total words")
+    return qtd_palavras
+
 
 def count_characters(texto):
     dicionario = {}
@@ -9,4 +10,21 @@ def count_characters(texto):
             dicionario[letra] = 1    
         else: 
             dicionario[letra] = dicionario[letra] + 1
-    print(dicionario)
+    return dicionario
+
+def sorted_list(item):
+    return item['num']
+
+def report(listagem):
+    lista_dicionarios = []
+    for chave, valor in listagem.items():
+        dicionario = {}
+        dicionario['char'] = chave
+        dicionario['num'] = valor
+        lista_dicionarios.append(dicionario) 
+    lista_dicionarios.sort(reverse = True, key=sorted_list)
+    return lista_dicionarios
+
+
+
+
